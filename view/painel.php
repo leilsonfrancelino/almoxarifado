@@ -4,7 +4,7 @@ require "../dao/conexao.php";
 include "../valida/verifica_login.php";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 
