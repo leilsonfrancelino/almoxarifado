@@ -74,14 +74,7 @@ include "../valida/verifica_login.php";
             <a href="#">Painel Principal</a>
           </li>
           <li class="breadcrumb-item active">Visão global</li>
-        </ol>
-
-        <!--Incluindo Cards-->
-        <?php
-        include_once "cards.php";
-        ?>
-
-        
+        </ol>        
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
@@ -118,10 +111,7 @@ include "../valida/verifica_login.php";
   <!-- Custom scripts for all pages-->
   <script src="../js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="../js/demo/datatables-demo.js"></script>
-  <script src="../js/demo/grafico_fornecedores.js"></script>
-  <script src="../js/demo/grafico_produtos.js"></script>
+ 
 
   <script>
     $(document).ready(function() {
