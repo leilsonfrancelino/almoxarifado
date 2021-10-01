@@ -82,7 +82,7 @@ $result_lista_departamento = mysqli_query($conexao, $sql_lista_departamento);
           <li class="breadcrumb-item">
             <a href="painel.php">Painel Principal</a>
           </li>
-          <li class="breadcrumb-item active">Tabela de Departamentos</li>
+          <li class="breadcrumb-item active">Departamentos</li>
         </ol>
 
         <!-- Alerts-->
@@ -150,7 +150,7 @@ $result_lista_departamento = mysqli_query($conexao, $sql_lista_departamento);
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Tabela de Departamentos
+            Lista de Departamentos
             <?php require "modais/modal_cadastrar_departamento.php"?>
             <button style="" type="button" data-toggle="modal" data-target="#modal_cadastrar_departamento" class="btn btn-outline-primary fixed-right"> <i class='far fa-file' aria-hidden="true"></i> Novo</button>
             </div>
