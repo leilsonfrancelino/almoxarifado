@@ -59,12 +59,13 @@ include "../valida/verifica_login.php";
   <?php
   include_once "nav.php";
   ?>
+  
+   <!-- Incluindo o menu -->
+    <?php
+    include_once "menu.php";
+    ?>
 
   <div id="wrapper">
-   
-   
-   
-
     <div id="content-wrapper">
       <div class="container-fluid">
         <!-- Breadcrumbs-->
