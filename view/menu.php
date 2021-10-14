@@ -17,5 +17,13 @@
             <span>Departamentos</span>
         </a>	
 	</li>
+	<li class="nav-item">
+        <a class="nav-link <?php if ($pagina == "painel") {
+                                echo "active";
+                            } ?>" href="lista_grupos.php">
+            <i class="fa fa-users"></i>
+            <span>Grupo de Produtos</span>
+        </a>
+	</li>
 	
 </ul>
