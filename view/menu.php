@@ -33,5 +33,13 @@
             <span>Fornecedores</span>
         </a>
     </li>
+	<li class="nav-item">
+        <a class="nav-link <?php if ($pagina == "painel") {
+                                echo "active";
+                            } ?>" href="lista_produtos.php">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Produtos</span>
+        </a>
+	</li>
 	
 </ul>
