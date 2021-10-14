@@ -99,9 +99,8 @@ CREATE TABLE IF NOT EXISTS `movimentacoes_estoque` (
   `data_mov` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `movimentacao` int(11) NOT NULL,
   `departamento` int(11) DEFAULT NULL,
-  `responsavel` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `usuario_id_fk_mov` (`responsavel`) USING BTREE,
+  `responsavel` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`),  
   KEY `produto_id_fk_mov` (`produto`) USING BTREE,
   KEY `departamento_id_fk_mov` (`departamento`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -160,7 +159,6 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
 ALTER TABLE `movimentacoes_estoque`
   ADD CONSTRAINT `departamento_id_fk_mov` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`),
   ADD CONSTRAINT `produto_id_fk_mov` FOREIGN KEY (`produto`) REFERENCES `produtos` (`codigo`),
-  ADD CONSTRAINT `usuario_id_fk_mov` FOREIGN KEY (`responsavel`) REFERENCES `usuarios` (`id`);
 
 --
 -- Limitadores para a tabela `produtos`
