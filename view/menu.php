@@ -41,5 +41,13 @@
             <span>Produtos</span>
         </a>
 	</li>
+	<li class="nav-item">
+        <a class="nav-link <?php if ($pagina == "painel") {
+                                echo "active";
+                            } ?>" href="lista_estoque.php">
+            <i class="fas fa-fw fa-archive"></i>
+            <span>Estoque</span>
+        </a>
+	</li>
 	
 </ul>
