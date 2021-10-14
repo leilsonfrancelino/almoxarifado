@@ -25,5 +25,13 @@
             <span>Grupo de Produtos</span>
         </a>
 	</li>
+	<li class="nav-item">
+        <a class="nav-link <?php if ($pagina == "painel") {
+                                echo "active";
+                            } ?>" href="lista_fornecedores.php">
+            <i class="fas fa-fw fa-industry"></i>
+            <span>Fornecedores</span>
+        </a>
+    </li>
 	
 </ul>
