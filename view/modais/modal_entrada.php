@@ -36,7 +36,7 @@ $result_acerto_entrada = mysqli_query($conexao, $sql_acerto_entrada);
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="inputPreco">Motivo de acerto:</label>
+                            <label for="inputPreco">Motivo da entrada:</label>
                             <input type="text" name="motivo_entrada" class="form-control" id="motivo" required>
                         </div>
                         <div class="form-group col-md-2">
