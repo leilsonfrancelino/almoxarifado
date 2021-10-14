@@ -6,7 +6,7 @@ include "../valida/verifica_login.php";
 //select ultimos fornecedores
 $sql_movimentacoes = "SELECT m.id,m.produto,m.quant_mov,m.motivo,m.data_mov,m.movimentacao,m.responsavel,u.id,u.usuario,p.codigo,p.descricao FROM movimentacoes_estoque as m
 INNER JOIN produtos as p ON m.produto=p.codigo 
-INNER JOIN usuarios as u ON m.responsavel=u.id";
+INNER JOIN usuarios as u ON m.responsavel=u.usuario";
 $result_movimentacoes = mysqli_query($conexao, $sql_movimentacoes);
 $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
 
@@ -101,7 +101,8 @@ $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
 					<th>Descrição</th>
 					<th>Quantidade</th>
 					<th>Motivo da movimentação</th>
-					<th>Data de movimentação</th>					
+					<th>Data de movimentação</th>
+					<th>Tipo</th>					
 					<th>Responsável</th>
                 </tr>
               </thead>
