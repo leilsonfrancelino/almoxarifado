@@ -1,10 +1,8 @@
 <?php
 require "../dao/conexao.php";
-$sql_acerto_entrada = "SELECT * FROM produto";
+$sql_acerto_entrada = "SELECT * FROM produtos";
 $result_acerto_entrada = mysqli_query($conexao, $sql_acerto_entrada);
 
-$sql_tabela_entrada = "SELECT * FROM produto";
-$result_tabela_entrada = mysqli_query($conexao, $sql_tabela_entrada);
 ?>
 
 <!-- Modal -->

@@ -1,10 +1,8 @@
 <?php
 require "../dao/conexao.php";
-$sql_acerto_saida = "SELECT * FROM produto";
+$sql_acerto_saida = "SELECT * FROM produtos";
 $result_acerto_saida = mysqli_query($conexao, $sql_acerto_saida);
 
-/* $sql_tabela_saida = "SELECT * FROM produto";
-$result_tabela_saida = mysqli_query($conexao, $sql_tabela_saida); */
 ?>
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="modal_saida" tabindex="-1" role="dialog" aria-labelledby="modal_saidaTitle" aria-hidden="true">
