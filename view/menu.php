@@ -49,5 +49,16 @@
             <span>Estoque</span>
         </a>
 	</li>
+	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Relatórios</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Opções:</h6>
+			<a class="dropdown-item" href="relatorio_movimentacoes.php">Movimentações</a>                       
+            <div class="dropdown-divider"></div>
+        </div>
+    </li>
 	
 </ul>
