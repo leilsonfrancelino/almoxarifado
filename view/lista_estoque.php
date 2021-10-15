@@ -184,7 +184,7 @@ $result_total2 = mysqli_query($conexao, $sql_total2);
 
             <!-- total estoque -->
             <?php while ($dados_total2 = mysqli_fetch_array($result_total2)) {
-              ?> <strong>Total em estoque : R$ <?php
+              ?> <strong> | Total em estoque : R$ <?php
               $valor_total_formatado2 = number_format($dados_total2['total'], 2, ',', '.');
               echo $valor_total_formatado2; ?></strong>
             <?php
