@@ -73,8 +73,7 @@ CREATE TABLE IF NOT EXISTS `grupos` (
 DROP TABLE IF EXISTS `movimentacoes`;
 CREATE TABLE IF NOT EXISTS `movimentacoes` (
   `entrada` int(11) DEFAULT NULL,
-  `saida` int(11) DEFAULT NULL,
-  `devolucao` int(11) DEFAULT NULL
+  `saida` int(11) DEFAULT NULL,  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
