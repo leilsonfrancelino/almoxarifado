@@ -77,7 +77,7 @@ $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">          
           <li class="breadcrumb-item">
-            <a href="gerar_pdf_movimentacoes.php">Exportar PDF</a>
+            <a href="gerar_pdf_movimentacoes.php" target="_blank">Exportar PDF</a>
           </li>
         </ol>
     

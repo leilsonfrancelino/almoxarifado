@@ -79,7 +79,7 @@ $result_total_prod = mysqli_query($conexao, $sql_total_prod);
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">          
           <li class="breadcrumb-item">
-            <a href="gerar_pdf_produtos.php">Exportar PDF</a>
+            <a href="gerar_pdf_produtos.php" target="_blank">Exportar PDF</a>
           </li>
         </ol>
 
