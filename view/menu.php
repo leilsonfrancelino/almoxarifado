@@ -56,7 +56,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Opções:</h6>
-			<a class="dropdown-item" href="relatorio_movimentacoes.php">Movimentações</a>                       
+			<a class="dropdown-item" href="relatorio_movimentacoes.php">Movimentações</a> 
+            <a class="dropdown-item" href="relatorio_produtos.php">Produtos</a> 			
             <div class="dropdown-divider"></div>
         </div>
     </li>
