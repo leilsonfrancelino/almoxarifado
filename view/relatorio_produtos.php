@@ -118,8 +118,8 @@ $result_total_prod = mysqli_query($conexao, $sql_total_prod);
                     echo "<td> " . $dados_produtos['descricao'] . "</td>";
                     echo "<td> " . $dados_produtos['unidade'] . "</td>";
                     echo "<td> " . $dados_produtos['quantidade'] . "</td>";
-                    echo "<td> " . "R$" . $valor_unidade_formatado . "</td>";
-                    echo "<td> " . "R$" . $valor_produtos_formatado . "</td>";
+                    echo "<td> " . "R$ " . $valor_unidade_formatado . "</td>";
+                    echo "<td> " . "R$ " . $valor_produtos_formatado . "</td>";
                     echo "</tr>";
                   }
                   ?>
