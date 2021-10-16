@@ -70,6 +70,12 @@ $html = "
 		$result = mysqli_query($conexao, $sql);
 
 			while($row_dados = mysqli_fetch_assoc($result)){
+				if($row_dados['movimentacao']==0){
+                                                $mov='Entrada';
+                                            }
+                                            else{
+                                                $mov='Saída';
+                                            }
 				$html .= '<body>';
 				$html .= '<tr>';
 				$html .= '<td>'.$row_dados["id"].'</td>';
@@ -77,7 +83,7 @@ $html = "
 				$html .= '<td>'.$row_dados["quant_mov"].'</td>';
 				$html .= '<td>'.$row_dados["motivo"].'</td>';
 				$html .= '<td>'.date('d/m/Y', strtotime($row_dados['data_mov'])) .'</td>';
-				$html .= '<td>'.$row_dados["movimentacao"].'</td>';
+				$html .= '<td>'.$mov.'</td>';
 				$html .= '<td>'.$row_dados["usuario"].'</td>';
 				$html .= '</tr>';
 				$html .= '</body>';
