@@ -59,13 +59,13 @@ include "../valida/verifica_login.php";
   <?php
   include_once "nav.php";
   ?>
-  
+  <div id="wrapper">
    <!-- Incluindo o menu -->
     <?php
     include_once "menu.php";
     ?>
 
-  <div id="wrapper">
+  
     <div id="content-wrapper">
       <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -74,7 +74,12 @@ include "../valida/verifica_login.php";
             <a href="#">Painel Principal</a>
           </li>
           <li class="breadcrumb-item active">Visão global</li>
-        </ol>        
+        </ol>  
+
+		<!--Incluindo Cards-->
+        <?php
+        include_once "cards.php";
+        ?>
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer">
