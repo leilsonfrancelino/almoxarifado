@@ -25,19 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `departamentos`
---
-
-DROP TABLE IF EXISTS `departamentos`;
-CREATE TABLE IF NOT EXISTS `departamentos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `fornecedores`
 --
 
@@ -97,11 +84,9 @@ CREATE TABLE IF NOT EXISTS `movimentacoes_estoque` (
   `motivo` varchar(500) DEFAULT NULL,
   `data_mov` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `movimentacao` int(11) NOT NULL,
-  `departamento` int(11) DEFAULT NULL,
   `responsavel` varchar(80) NOT NULL,
   PRIMARY KEY (`id`),  
-  KEY `produto_id_fk_mov` (`produto`) USING BTREE,
-  KEY `departamento_id_fk_mov` (`departamento`)
+  KEY `produto_id_fk_mov` (`produto`) USING BTREE  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -156,7 +141,6 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
 -- Limitadores para a tabela `movimentacoes_estoque`
 --
 ALTER TABLE `movimentacoes_estoque`
-  ADD CONSTRAINT `departamento_id_fk_mov` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`),
   ADD CONSTRAINT `produto_id_fk_mov` FOREIGN KEY (`produto`) REFERENCES `produtos` (`codigo`),
 
 --
