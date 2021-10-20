@@ -38,7 +38,7 @@ $result_total = mysqli_query($conexao, $sql_total);
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-chart-area"></i>
-        Avisos
+        Alertas e Avisos
     </div>
     <div class="card-body">
         <div class="row">
@@ -46,9 +46,6 @@ $result_total = mysqli_query($conexao, $sql_total);
             <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-dark bg-outline-dark o-hidden h-100">
                     <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-alto fa-fw fa-angle-double-up"></i>
-                        </div>
                         <div>Estoque Máximo:<strong><?php echo " " . $row_excesso; ?></strong></div>
                         <p style="font-size:70%;">Produtos com quantidade maior a : 100 unidades</p>
                     </div>
@@ -62,10 +59,7 @@ $result_total = mysqli_query($conexao, $sql_total);
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-dark bg-outline-dark o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-baixo fa-fw fa-exclamation-triangle"></i>
-                        </div>
+                    <div class="card-body">                        
                         <div>Estoque Mínimo:<strong><?php echo " " . $row_abaixo; ?></strong></div>
                         <p style="font-size:70%;">Produtos com quantidade menor a : 5 unidades. </p>
                     </div>
@@ -79,10 +73,7 @@ $result_total = mysqli_query($conexao, $sql_total);
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-dark bg-outline-dark o-hidden h-100">
-                    <div class="card-body">
-                        <div class="card-body-icon">
-                            <i class="fas fa-dinh fa-fw fa-comment-dollar"></i>
-                        </div>
+                    <div class="card-body">                        
                         <div>Valor em estoque atual:</div>
 
                         <!-- total estoque -->
