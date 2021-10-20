@@ -2,7 +2,7 @@
 require "../dao/conexao.php";
 
 //select Excesso de estoque
-$sql_excesso = "SELECT * FROM produtos WHERE quantidade > 100";
+$sql_excesso = "SELECT * FROM produtos WHERE quantidade > 10";
 $result_excesso = mysqli_query($conexao, $sql_excesso);
 $row_excesso = mysqli_num_rows($result_excesso);
 
@@ -47,7 +47,7 @@ $result_total = mysqli_query($conexao, $sql_total);
             <div class="card text-dark bg-outline-dark o-hidden h-100">
                     <div class="card-body">
                         <div>Estoque Máximo:<strong><?php echo " " . $row_excesso; ?></strong></div>
-                        <p style="font-size:70%;">Produtos com quantidade maior a : 100 unidades</p>
+                        <p style="font-size:70%;">Produtos com quantidade maior a : 10 unidades.</p>
                     </div>
                     <a class="cursor card-footer text-dark clearfix small z-1" data-toggle="collapse" data-target="#collapseExcesso" aria-expanded="false" aria-controls="collapseExcesso">
                         <span class="float-left">Ver detalhes</span>
