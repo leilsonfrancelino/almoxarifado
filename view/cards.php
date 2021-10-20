@@ -1,17 +1,6 @@
 <?php
 require "../dao/conexao.php";
 
-//select produtos totais
-$sql_produtos_totais = "SELECT * FROM produtos";
-$result_produtos_totais = mysqli_query($conexao, $sql_produtos_totais);
-$row_produtos_totais = mysqli_num_rows($result_produtos_totais);
-
-//select últimos produtos
-$sql_ultimos_produtos = "SELECT p.codigo,p.descricao,p.fornecedor,p.unidade,p.valor_unidade, f.id,f.nome
-FROM produto as p INNER JOIN fornecedores as f ON p.fornecedor=f.id ORDER BY codigo DESC LIMIT 5";
-$result_ultimos_produtos = mysqli_query($conexao, $sql_ultimos_produtos);
-
-
 //select Excesso de estoque
 $sql_excesso = "SELECT * FROM produtos WHERE quantidade > 100";
 $result_excesso = mysqli_query($conexao, $sql_excesso);
@@ -117,76 +106,7 @@ $result_total = mysqli_query($conexao, $sql_total);
 
         </div>
 
-        <!-- Produtos -->
-        <div class="collapse" id="collapseMais_usados">
-            <div class="card card-body alert alert-primary" role="alert">
-                <div class="row">
-				                                  
-                    <div class="col-lg-12">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <i class="fas fa-archive"></i>
-                                Informações de produtos:</div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="card mb-3">
-                                            <div class="card-header">
-                                                Últimos Produtos cadastrados:</div>
-                                            <div class="card-body">
-                                                <!--Tabela abaixo estoque -->
-                                                <table class="table table-borderless">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Id</th>
-                                                            <th scope="col">Descrição</th>                                                            <th scope="col">Fornecedor</th>
-                                                            <th scope="col">Unidade</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php while ($dados_ultimos_produtos = mysqli_fetch_array($result_ultimos_produtos)) {
-                                                            echo "<tr>";
-                                                            echo "<th scope='row'>" . $dados_ultimos_produtos['codigo'] . "</th>";
-                                                            echo  "<td>" . $dados_ultimos_produtos['descricao'] . "</td>";                                                            
-                                                            echo  "<td>" . $dados_ultimos_produtos['nome'] . "</td>";
-                                                            echo  "<td>" . $dados_ultimos_produtos['unidade'] . "</td>";
-                                                            echo "<tr>";
-                                                        } ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="card-footer small text-muted"> Atualizado em :
-                                                <?php date_default_timezone_set('America/Sao_Paulo');
-                                                $date = date('d-m-y H:i');
-                                                echo $date; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <div class="card mb-3">
-                                            <div class="card-header">
-                                                <i class="fas fa-chart-pie"></i>
-                                                Classificações de produtos:</div>
-                                            <div class="card-body">
-                                                <canvas id="produtos" width="100%" height="95,5"></canvas>
-                                            </div>
-                                            <div class="card-footer small text-muted"> Atualizado em :
-                                                <?php date_default_timezone_set('America/Sao_Paulo');
-                                                $date = date('d-m-y H:i');
-                                                echo $date; ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Colapse excesso -->
         <div class="collapse" id="collapseExcesso">
