@@ -151,6 +151,30 @@ $result_lista = mysqli_query($conexao, $sql_lista);
         <?php
           unset($_SESSION['selecione_prod']);
         } ?>
+		
+		<!-- Excluir Modal-->
+			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">            
+					   <div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Realmente deseja excluir?</h5>
+							<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>          
+						<div class="modal-body">
+							<p>Selecione "Delete" abaixo para confirmar.</p>                    
+							<p class="debug-url"></p>
+						</div>
+					   
+						<div class="modal-footer">
+							<button class="btn btn-secondary" style="width:20%" type="button" data-dismiss="modal">Cancelar</button>
+							<a class="btn btn-danger btn-ok">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Fim Modal-->
 
         <div class="card mb-3">
           <div class="card-header">
@@ -255,6 +279,13 @@ $result_lista = mysqli_query($conexao, $sql_lista);
   $('[data-toggle="tooltip"]').tooltip()
 })
   </script>
+  
+  <!-- Script captura o id a ser excluido-->
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));          
+        });
+    </script>
 
 </body>
 
