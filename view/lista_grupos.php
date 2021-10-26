@@ -147,7 +147,29 @@ $result_lista_grupo = mysqli_query($conexao, $sql_lista_grupo);
           unset($_SESSION['selecione_grupo']);
         } ?>
 		
-
+		<!-- Excluir Modal-->
+			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">            
+					   <div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Realmente deseja excluir?</h5>
+							<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>          
+						<div class="modal-body">
+							<p>Selecione "Delete" abaixo para confirmar.</p>                    
+							<p class="debug-url"></p>
+						</div>
+					   
+						<div class="modal-footer">
+							<button class="btn btn-secondary" style="width:20%" type="button" data-dismiss="modal">Cancelar</button>
+							<a class="btn btn-danger btn-ok">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Fim Modal-->
 
 
         <div class="card mb-3">
@@ -182,8 +204,8 @@ $result_lista_grupo = mysqli_query($conexao, $sql_lista_grupo);
                     echo "<td> " . $dados_lista_grupo['nome'] . "</td>";                    
                     echo "<td> " . "<a href='select_alterar_grupo.php?id=".$dados_lista_grupo['id']."' type='button' class='btn btn-outline-warning 
 					btn-sm 'data-toggle='tooltip' data-placement='top' title='Alterar' style='width:20%;'><i class='fas fa-pencil-alt' 
-					aria-hidden='true'></i></a>"." "."<a href='confirmar_exclusao_grupo.php?id=".$dados_lista_grupo['id']."' 
-					type='button' class='btn btn-outline-danger btn-sm' data-toggle='tooltip' data-placement='top' title='Excluir' 
+					aria-hidden='true'></i></a>"." "."<a href='#' data-href='confirmar_exclusao_grupo.php?id=".$dados_lista_grupo['id']."' type='button' 
+					class='btn btn-outline-danger btn-sm' data-toggle='modal' data-target='#confirm-delete' data-placement='top' title='Excluir' 
 					style='width:20%;'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"."</td>";
                     echo "</tr>";
                   }
@@ -240,6 +262,13 @@ $result_lista_grupo = mysqli_query($conexao, $sql_lista_grupo);
       setTimeout('$("#preload").fadeOut(10)', 500);
     });
   </script>
+  
+  <!-- Script captura o id a ser excluido-->
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));          
+        });
+    </script>
   
 </body>
 
