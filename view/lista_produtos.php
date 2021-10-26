@@ -220,7 +220,7 @@ $result_lista = mysqli_query($conexao, $sql_lista);
 					echo "<td> " . $dados_lista['g_nome'] . "</td>";
                     echo "<td> " . $dados_lista['unidade'] . "</td>";
                     echo "<td> " . "R$ " . $valor_unidade_formatado . "</td>";
-                    echo "<td> " . "<a href='select_alterar_produto.php?id=".$dados_lista['codigo']."' type='button' class='btn btn-outline-warning btn-sm 'data-toggle='tooltip' data-placement='top' title='Alterar' style='width:40%;'><i class='fas fa-pencil-alt' aria-hidden='true'></i></a>"." "."<a href='confirmar_exclusao_produto.php?id=".$dados_lista['codigo']."' type='button' class='btn btn-outline-danger btn-sm' data-toggle='tooltip' data-placement='top' title='Excluir' style='width:40%;'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"."</td>";
+                    echo "<td> " . "<a href='select_alterar_produto.php?id=".$dados_lista['codigo']."' type='button' class='btn btn-outline-warning btn-sm 'data-toggle='tooltip' data-placement='top' title='Alterar' style='width:40%;'><i class='fas fa-pencil-alt' aria-hidden='true'></i></a>"." "."<a href='#' data-href='confirmar_exclusao_produto.php?id=".$dados_lista['codigo']."' type='button' class='btn btn-outline-danger btn-sm' data-toggle='modal' data-target='#confirm-delete' data-placement='top' title='Excluir' style='width:40%;'><i class='fas fa-trash-alt' aria-hidden='true'></i></a>"."</td>";
                     echo "</tr>";
                   }
                   ?>
