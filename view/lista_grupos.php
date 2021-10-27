@@ -146,6 +146,13 @@ $result_lista_grupo = mysqli_query($conexao, $sql_lista_grupo);
         <?php
           unset($_SESSION['selecione_grupo']);
         } ?>
+		<?php if (isset($_SESSION['grupo_ja_existe'])) { ?>
+          <script>
+            swal("Ops...", "Grupo já cadastrado!", "error")
+          </script>
+        <?php
+          unset($_SESSION['grupo_ja_existe']);
+        } ?>
 		
 		<!-- Excluir Modal-->
 			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
