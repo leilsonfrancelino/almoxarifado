@@ -151,6 +151,14 @@ $result_lista = mysqli_query($conexao, $sql_lista);
         <?php
           unset($_SESSION['selecione_prod']);
         } ?>
+		<?php if (isset($_SESSION['prod_ja_existe'])) { ?>
+          <script>
+            swal("Ops...", "Produto já cadastrado!", "error")
+          </script>
+        <?php
+
+          unset($_SESSION['prod_ja_existe']);
+        } ?>
 		
 		<!-- Excluir Modal-->
 			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
