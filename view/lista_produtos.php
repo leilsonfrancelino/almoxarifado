@@ -160,7 +160,7 @@ $result_lista = mysqli_query($conexao, $sql_lista);
         } ?>
 		<?php if (isset($_SESSION['chave_estrangeira_prod'])) { ?>
           <script>
-            swal("Ops...", "Este grupo de produtos não pode ser excluído, porque esta associado à tabela produtos, deve ser removido o produto primeiro!", "error")
+            swal("Ops...", "Este produto não pode ser excluído, porque esta associado as entradas e saídas do estoque!", "error")
           </script>
         <?php
           unset($_SESSION['chave_estrangeira_prod']);
