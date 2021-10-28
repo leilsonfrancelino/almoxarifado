@@ -151,8 +151,14 @@ $result_lista_fornec = mysqli_query($conexao, $sql_lista_fornec);
             swal("Ops...", "Fornecedor já cadastrado!", "error")
           </script>
         <?php
-
           unset($_SESSION['fornecedor_ja_existe']);
+        } ?>
+		<?php if (isset($_SESSION['chave_estrangeira_fornecedor'])) { ?>
+          <script>
+            swal("Ops...", "Este fornecedor não pode ser excluído, porque esta associado à tabela produtos, deve ser removido o produto primeiro!", "error")
+          </script>
+        <?php
+          unset($_SESSION['chave_estrangeira_fornecedor']);
         } ?>
 		
 		<!-- Excluir Modal-->
