@@ -156,8 +156,14 @@ $result_lista = mysqli_query($conexao, $sql_lista);
             swal("Ops...", "Produto já cadastrado!", "error")
           </script>
         <?php
-
           unset($_SESSION['prod_ja_existe']);
+        } ?>
+		<?php if (isset($_SESSION['chave_estrangeira_prod'])) { ?>
+          <script>
+            swal("Ops...", "Este grupo de produtos não pode ser excluído, porque esta associado à tabela produtos, deve ser removido o produto primeiro!", "error")
+          </script>
+        <?php
+          unset($_SESSION['chave_estrangeira_prod']);
         } ?>
 		
 		<!-- Excluir Modal-->
