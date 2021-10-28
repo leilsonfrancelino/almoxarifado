@@ -153,6 +153,13 @@ $result_lista_grupo = mysqli_query($conexao, $sql_lista_grupo);
         <?php
           unset($_SESSION['grupo_ja_existe']);
         } ?>
+		<?php if (isset($_SESSION['chave_estrangeira_grupo'])) { ?>
+          <script>
+            swal("Ops...", "Este grupo de produtos não pode ser excluído, porque esta associado à tabela produtos, deve ser removido o produto primeiro!", "error")
+          </script>
+        <?php
+          unset($_SESSION['chave_estrangeira_grupo']);
+        } ?>
 		
 		<!-- Excluir Modal-->
 			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
