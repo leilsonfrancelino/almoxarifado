@@ -146,6 +146,14 @@ $result_lista_fornec = mysqli_query($conexao, $sql_lista_fornec);
         <?php
           unset($_SESSION['selecione_fornecedor']);
         } ?>
+		<?php if (isset($_SESSION['fornecedor_ja_existe'])) { ?>
+          <script>
+            swal("Ops...", "Fornecedor já cadastrado!", "error")
+          </script>
+        <?php
+
+          unset($_SESSION['fornecedor_ja_existe']);
+        } ?>
 		
 		<!-- Excluir Modal-->
 			<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
