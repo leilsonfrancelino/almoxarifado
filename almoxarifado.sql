@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `movimentacoes` (
 -- Extraindo dados da tabela `movimentacoes`
 --
 
-INSERT INTO `movimentacoes` (`entrada`, `saida`, `devolucao`) VALUES
-(0, 1, 2);
+INSERT INTO `movimentacoes` (`entrada`, `saida`) VALUES
+(0, 1);
 
 -- --------------------------------------------------------
 
