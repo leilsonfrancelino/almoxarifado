@@ -141,7 +141,7 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`) VALUES
 -- Limitadores para a tabela `movimentacoes_estoque`
 --
 ALTER TABLE `movimentacoes_estoque`
-  ADD CONSTRAINT `produto_id_fk_mov` FOREIGN KEY (`produto`) REFERENCES `produtos` (`codigo`),
+  ADD CONSTRAINT `produto_id_fk_mov` FOREIGN KEY (`produto`) REFERENCES `produtos` (`codigo`);
 
 --
 -- Limitadores para a tabela `produtos`
