@@ -7,13 +7,21 @@
             <i class="fas fa-fw fa-university"></i>
             <span>Painel Principal</span>
         </a>
-    </li>	
+    </li>
 	
 	<li class="nav-item">
         <a class="nav-link <?php if ($pagina == "painel") {
                                 echo "active";
+                            } ?>" href="lista_clientes.php">
+            <i class="fa fa-address-book"></i>
+            <span>Clientes</span>
+        </a>
+	</li>	
+	<li class="nav-item">
+        <a class="nav-link <?php if ($pagina == "painel") {
+                                echo "active";
                             } ?>" href="lista_grupos.php">
-            <i class="fa fa-users"></i>
+            <i class="fas fa-object-group"></i>
             <span>Grupo de Produtos</span>
         </a>
 	</li>
