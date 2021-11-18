@@ -95,16 +95,15 @@ INSERT INTO `grupos` (`id`, `nome`) VALUES
 DROP TABLE IF EXISTS `movimentacoes`;
 CREATE TABLE IF NOT EXISTS `movimentacoes` (
   `entrada` int(11) DEFAULT NULL,
-  `saida` int(11) DEFAULT NULL,
-  `devolucao` int(11) DEFAULT NULL
+  `saida` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `movimentacoes`
 --
 
-INSERT INTO `movimentacoes` (`entrada`, `saida`, `devolucao`) VALUES
-(0, 1, 2);
+INSERT INTO `movimentacoes` (`entrada`, `saida`) VALUES
+(0, 1);
 
 -- --------------------------------------------------------
 
