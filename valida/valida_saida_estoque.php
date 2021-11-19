@@ -5,7 +5,7 @@ require "../dao/conexao.php";
 
 if (isset($_POST['lancar_saida'])) {
 
-
+    $cliente_saida = ($_POST['select_cliente_saida']);
     $prod_saida = ($_POST['select_prod_saida']);
     $motivo = ($_POST['motivo_saida']);
     $quantidade_saida = ($_POST['quantidade_saida']);
@@ -14,7 +14,7 @@ if (isset($_POST['lancar_saida'])) {
     $quantidade_formatada = str_replace(',', '.', str_replace('.', '', $quantidade_saida));
 
     //inserir no banco.
-    $sql1 = "INSERT INTO movimentacoes_estoque (produto,quant_mov,motivo,movimentacao,responsavel) VALUES ('$prod_saida','$quantidade_formatada','$motivo',1,'$responsavel')";
+    $sql1 = "INSERT INTO movimentacoes_estoque (produto,cliente,quant_mov,motivo,movimentacao,responsavel) VALUES ('$prod_saida','$cliente_saida','$quantidade_formatada','$motivo',1,'$responsavel')";
     $sql2="UPDATE produtos set quantidade = quantidade - '$quantidade_formatada' WHERE codigo='$prod_saida'";
 
     //Incluir
