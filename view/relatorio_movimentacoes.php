@@ -4,9 +4,10 @@ require "../dao/conexao.php";
 include "../valida/verifica_login.php";
 
 //select ultimos fornecedores
-$sql_movimentacoes = "SELECT m.id,m.produto,m.quant_mov,m.motivo,m.data_mov,m.movimentacao,m.responsavel,u.id,u.usuario,p.codigo,p.descricao FROM movimentacoes_estoque as m
-INNER JOIN produtos as p ON m.produto=p.codigo 
-INNER JOIN usuarios as u ON m.responsavel=u.usuario";
+$sql_movimentacoes = "SELECT m.id,m.produto,m.quant_mov,m.motivo,m.data_mov,m.movimentacao,m.responsavel,u.id,u.usuario,p.codigo,p.descricao,c.id_cli,c.nome_cli FROM movimentacoes_estoque as m
+LEFT JOIN produtos as p ON m.produto=p.codigo 
+LEFT JOIN usuarios as u ON m.responsavel=u.usuario
+LEFT JOIN clientes as c ON m.cliente=c.id_cli";
 $result_movimentacoes = mysqli_query($conexao, $sql_movimentacoes);
 $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
 
@@ -98,7 +99,8 @@ $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
               <thead>
                 <tr>
                     <th>Id</th>
-					<th>Descrição</th>
+					<th>Produto</th>
+					<th>Cliente</th>
 					<th>Quantidade</th>
 					<th>Motivo da movimentação</th>
 					<th>Data de movimentação</th>
@@ -117,6 +119,7 @@ $row_movimentacoes = mysqli_num_rows($result_movimentacoes);
                     echo "<tr>";
 					echo "<td> " . $dados_movimentacoes['id'] . "</td>";
 					echo "<td> " . $dados_movimentacoes['descricao'] . "</td>";
+					echo "<td> " . $dados_movimentacoes['nome_cli'] . "</td>";
 					echo "<td> " . $dados_movimentacoes['quant_mov'] . "</td>";
 					echo "<td> " . $dados_movimentacoes['motivo'] . "</td>";
 					echo "<td> " . date('d/m/Y', strtotime($dados_movimentacoes['data_mov'])) . "</td>";
