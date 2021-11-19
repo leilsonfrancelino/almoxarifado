@@ -99,7 +99,7 @@ $result_total_prod = mysqli_query($conexao, $sql_total_prod);
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Descrição</th>
+                  <th>Produto</th>
                   <th>Unidade</th>
                   <th>Quantidade</th>
                   <th>Valor unitário</th>

@@ -136,7 +136,7 @@ $result_total2 = mysqli_query($conexao, $sql_total2);
                 <thead>
                   <tr>
                     <th>Id</th>
-                    <th>Descrição</th>
+                    <th>Produto</th>
                     <th>Unidade</th>
                     <th>Quantidade</th>
                     <th>Valor unitário</th>
@@ -146,7 +146,7 @@ $result_total2 = mysqli_query($conexao, $sql_total2);
                 <tfoot>
                   <tr>
                     <th>Id</th>
-                    <th>Descrição</th>
+                    <th>Produto</th>
                     <th>Unidade</th>
                     <th>Quantidade</th>
                     <th>Valor unitário</th>

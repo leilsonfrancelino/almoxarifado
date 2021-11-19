@@ -54,7 +54,7 @@ $html = "
 		<thead>
 			<tr>
 				<th><b>Id</b></th>
-				<th><b>Descrição</b></th>
+				<th><b>Produto</b></th>
 				<th><b>Unidade</b></th>
 				<th><b>Quantidade</b></th>
 				<th><b>Valor unitário</b></th>				
