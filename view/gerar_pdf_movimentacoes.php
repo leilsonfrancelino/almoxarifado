@@ -55,7 +55,8 @@ $html = "
 		<thead>
 			<tr>
 				<th><b>Id</b></th>
-				<th><b>Descrição</b></th>
+				<th><b>Produto</b></th>
+				<th><b>Cliente</b></th>
 				<th><b>Quantidade</b></th>
 				<th><b>Motivo da movimentação</b></th>
 				<th><b>Data de movimentação</b></th>
@@ -64,9 +65,10 @@ $html = "
 			</tr>
 		</thead>";
 	
-		$sql = "SELECT m.id,m.produto,m.quant_mov,m.motivo,m.data_mov,m.movimentacao,m.responsavel,u.id,u.usuario,p.codigo,p.descricao FROM movimentacoes_estoque as m
-		INNER JOIN produtos as p ON m.produto=p.codigo 
-		INNER JOIN usuarios as u ON m.responsavel=u.usuario";
+		$sql = "SELECT m.id,m.produto,m.quant_mov,m.motivo,m.data_mov,m.movimentacao,m.responsavel,u.id,u.usuario,p.codigo,p.descricao,c.id_cli,c.nome_cli FROM movimentacoes_estoque as m
+LEFT JOIN produtos as p ON m.produto=p.codigo 
+LEFT JOIN usuarios as u ON m.responsavel=u.usuario
+LEFT JOIN clientes as c ON m.cliente=c.id_cli";
 		$result = mysqli_query($conexao, $sql);
 
 			while($row_dados = mysqli_fetch_assoc($result)){
@@ -80,6 +82,7 @@ $html = "
 				$html .= '<tr>';
 				$html .= '<td>'.$row_dados["id"].'</td>';
 				$html .= '<td>'.$row_dados["descricao"].'</td>';
+				$html .= '<td>'.$row_dados["nome_cli"].'</td>';
 				$html .= '<td>'.$row_dados["quant_mov"].'</td>';
 				$html .= '<td>'.$row_dados["motivo"].'</td>';
 				$html .= '<td>'.date('d/m/Y', strtotime($row_dados['data_mov'])) .'</td>';
