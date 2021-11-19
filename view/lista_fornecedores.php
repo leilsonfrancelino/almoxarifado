@@ -172,13 +172,13 @@ $result_lista_fornec = mysqli_query($conexao, $sql_lista_fornec);
 							</button>
 						</div>          
 						<div class="modal-body">
-							<p>Selecione "Delete" abaixo para confirmar.</p>                    
+							<p>Selecione "Excluir" abaixo para confirmar.</p>                    
 							<p class="debug-url"></p>
 						</div>
 					   
 						<div class="modal-footer">
 							<button class="btn btn-secondary" style="width:20%" type="button" data-dismiss="modal">Cancelar</button>
-							<a class="btn btn-danger btn-ok">Delete</a>
+							<a class="btn btn-danger btn-ok">Excluir</a>
 						</div>
 					</div>
 				</div>
