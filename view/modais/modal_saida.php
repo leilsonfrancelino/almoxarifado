@@ -1,7 +1,9 @@
 <?php
 require "../dao/conexao.php";
 $sql_acerto_saida = "SELECT * FROM produtos";
+$sql_acerto_saida1 = "SELECT * FROM clientes";
 $result_acerto_saida = mysqli_query($conexao, $sql_acerto_saida);
+$result_acerto_saida1 = mysqli_query($conexao, $sql_acerto_saida1);
 
 ?>
 <!-- Modal -->
@@ -17,6 +19,23 @@ $result_acerto_saida = mysqli_query($conexao, $sql_acerto_saida);
             <div class="modal-body">
                 <form method="POST" action="../valida/valida_saida_estoque.php">
                     <div class="form-row">
+					    <div class="form-group col-md-6">
+                            <label for="inputNome">Cliente:</label>
+                            <select class="form-control" value="" name="select_cliente_saida" id="select_cliente_saida">
+                                <option value="" selected required>Selecione...</option>
+                                <?php
+                                while ($dados_acerto_saida1 = mysqli_fetch_array($result_acerto_saida1)) {
+                                    ?>
+                                    <option value="<?php echo $dados_acerto_saida1['id_cli']; ?>">
+                                        <?php
+                                            echo $dados_acerto_saida1['id_cli'] . " - " . $dados_acerto_saida1['nome_cli'];
+                                            ?>
+                                    </option>
+                                <?php
+                                }
+                                ?>
+                            </select>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="inputNome">Produto:</label>
                             <select class="form-control" value="" name="select_prod_saida" id="select_prod_saida">
@@ -34,6 +53,7 @@ $result_acerto_saida = mysqli_query($conexao, $sql_acerto_saida);
                                 ?>
                             </select>
                         </div>
+						
                         <div class="form-group col-md-4">
                             <label for="inputPreco">Motivo da saída:</label>
                             <input type="text" name="motivo_saida" class="form-control" id="motivo" required>
